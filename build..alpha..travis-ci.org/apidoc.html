@@ -1,0 +1,441 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/redux-observable/redux-observable#README.md"
+
+    >redux-observable (v0.14.1)</a>
+</h1>
+<h4>RxJS based middleware for Redux. Compose and cancel async actions and more.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-observable">module redux-observable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.ActionsObservable">
+            function <span class="apidocSignatureSpan">redux-observable.</span>ActionsObservable
+            <span class="apidocSignatureSpan">(actionsSubject)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.combineEpics">
+            function <span class="apidocSignatureSpan">redux-observable.</span>combineEpics
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.createEpicMiddleware">
+            function <span class="apidocSignatureSpan">redux-observable.</span>createEpicMiddleware
+            <span class="apidocSignatureSpan">(epic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">redux-observable.</span>EPIC_END</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-observable.ActionsObservable">module redux-observable.ActionsObservable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.ActionsObservable.ActionsObservable">
+            function <span class="apidocSignatureSpan">redux-observable.</span>ActionsObservable
+            <span class="apidocSignatureSpan">(actionsSubject)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-observable.combineEpics">module redux-observable.combineEpics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.combineEpics.combineEpics">
+            function <span class="apidocSignatureSpan">redux-observable.</span>combineEpics
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-observable.createEpicMiddleware">module redux-observable.createEpicMiddleware</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-observable.createEpicMiddleware.createEpicMiddleware">
+            function <span class="apidocSignatureSpan">redux-observable.</span>createEpicMiddleware
+            <span class="apidocSignatureSpan">(epic)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-observable" id="apidoc.module.redux-observable">module redux-observable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.ActionsObservable" id="apidoc.element.redux-observable.ActionsObservable">
+        function <span class="apidocSignatureSpan">redux-observable.</span>ActionsObservable
+        <span class="apidocSignatureSpan">(actionsSubject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ActionsObservable(actionsSubject) {
+  _classCallCheck(this, ActionsObservable);
+
+  var _this = _possibleConstructorReturn(this, (ActionsObservable.__proto__ || Object.getPrototypeOf(ActionsObservable)).call(this
+));
+
+  _this.source = actionsSubject;
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+throw new TypeError(&#x27;You must provide a root Epic to createEpicMiddleware&#x27;);
+  }
+
+  // even though we used default param, we need to merge the defaults
+  // inside the options object as well in case they declare only some
+  options = _extends({}, defaultOptions, options);
+  var input$ = new _Subject.Subject();
+  var action$ = options.adapter.input(new _ActionsObservable.<span class="apidocCodeKeywordSpan">ActionsObservable</span>(input$));
+  var epic$ = new _Subject.Subject();
+  var store = void 0;
+
+  var epicMiddleware = function epicMiddleware(_store) {
+store = _store;
+
+return function (next) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.combineEpics" id="apidoc.element.redux-observable.combineEpics">
+        function <span class="apidocSignatureSpan">redux-observable.</span>combineEpics
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function combineEpics() {
+  for (var _len = arguments.length, epics = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    epics[_key] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 &#x3c; _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return _merge.merge.apply(undefined, _toConsumableArray(epics.map(function (epic) {
+      var output$ = epic.apply(undefined, args);
+      if (!output$) {
+        throw new TypeError(&#x27;combineEpics: one of the provided Epics &#x22;&#x27; + (epic.name || &#x27;&#x3c;anonymous&#x3e;&#x27;) + &#x27;&#x22; does not return a stream
+. Double check you\&#x27;re not missing a return statement!&#x27;);
+      }
+      return output$;
+    })));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.createEpicMiddleware" id="apidoc.element.redux-observable.createEpicMiddleware">
+        function <span class="apidocSignatureSpan">redux-observable.</span>createEpicMiddleware
+        <span class="apidocSignatureSpan">(epic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createEpicMiddleware(epic) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : defaultOptions;
+
+  if (typeof epic !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;You must provide a root Epic to createEpicMiddleware&#x27;);
+  }
+
+  // even though we used default param, we need to merge the defaults
+  // inside the options object as well in case they declare only some
+  options = _extends({}, defaultOptions, options);
+  var input$ = new _Subject.Subject();
+  var action$ = options.adapter.input(new _ActionsObservable.ActionsObservable(input$));
+  var epic$ = new _Subject.Subject();
+  var store = void 0;
+
+  var epicMiddleware = function epicMiddleware(_store) {
+    store = _store;
+
+    return function (next) {
+      var _context;
+
+      (_context = _map.map.call(epic$, function (epic) {
+        var output$ = &#x27;dependencies&#x27; in options ? epic(action$, store, options.dependencies) : epic(action$, store);
+
+        if (!output$) {
+          throw new TypeError(&#x27;Your root Epic &#x22;&#x27; + (epic.name || &#x27;&#x3c;anonymous&#x3e;&#x27;) + &#x27;&#x22; does not return a stream. Double check you\&#x27;
+re not missing a return statement!&#x27;);
+        }
+
+        return output$;
+      }), _switchMap.switchMap).call(_context, function (output$) {
+        return options.adapter.output(output$);
+      }).subscribe(store.dispatch);
+
+      // Setup initial root epic
+      epic$.next(epic);
+
+      return function (action) {
+        var result = next(action);
+        input$.next(action);
+        return result;
+      };
+    };
+  };
+
+  epicMiddleware.replaceEpic = function (epic) {
+    // gives the previous root Epic a last chance
+    // to do some clean up
+    store.dispatch({ type: _EPIC_END.EPIC_END });
+    // switches to the new root Epic, synchronously terminating
+    // the previous one
+    epic$.next(epic);
+  };
+
+  return epicMiddleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-observable.ActionsObservable" id="apidoc.module.redux-observable.ActionsObservable">module redux-observable.ActionsObservable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.ActionsObservable.ActionsObservable" id="apidoc.element.redux-observable.ActionsObservable.ActionsObservable">
+        function <span class="apidocSignatureSpan">redux-observable.</span>ActionsObservable
+        <span class="apidocSignatureSpan">(actionsSubject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ActionsObservable(actionsSubject) {
+  _classCallCheck(this, ActionsObservable);
+
+  var _this = _possibleConstructorReturn(this, (ActionsObservable.__proto__ || Object.getPrototypeOf(ActionsObservable)).call(this
+));
+
+  _this.source = actionsSubject;
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+throw new TypeError(&#x27;You must provide a root Epic to createEpicMiddleware&#x27;);
+  }
+
+  // even though we used default param, we need to merge the defaults
+  // inside the options object as well in case they declare only some
+  options = _extends({}, defaultOptions, options);
+  var input$ = new _Subject.Subject();
+  var action$ = options.adapter.input(new _ActionsObservable.<span class="apidocCodeKeywordSpan">ActionsObservable</span>(input$));
+  var epic$ = new _Subject.Subject();
+  var store = void 0;
+
+  var epicMiddleware = function epicMiddleware(_store) {
+store = _store;
+
+return function (next) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-observable.combineEpics" id="apidoc.module.redux-observable.combineEpics">module redux-observable.combineEpics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.combineEpics.combineEpics" id="apidoc.element.redux-observable.combineEpics.combineEpics">
+        function <span class="apidocSignatureSpan">redux-observable.</span>combineEpics
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function combineEpics() {
+  for (var _len = arguments.length, epics = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    epics[_key] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 &#x3c; _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return _merge.merge.apply(undefined, _toConsumableArray(epics.map(function (epic) {
+      var output$ = epic.apply(undefined, args);
+      if (!output$) {
+        throw new TypeError(&#x27;combineEpics: one of the provided Epics &#x22;&#x27; + (epic.name || &#x27;&#x3c;anonymous&#x3e;&#x27;) + &#x27;&#x22; does not return a stream
+. Double check you\&#x27;re not missing a return statement!&#x27;);
+      }
+      return output$;
+    })));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-observable.createEpicMiddleware" id="apidoc.module.redux-observable.createEpicMiddleware">module redux-observable.createEpicMiddleware</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-observable.createEpicMiddleware.createEpicMiddleware" id="apidoc.element.redux-observable.createEpicMiddleware.createEpicMiddleware">
+        function <span class="apidocSignatureSpan">redux-observable.</span>createEpicMiddleware
+        <span class="apidocSignatureSpan">(epic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createEpicMiddleware(epic) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : defaultOptions;
+
+  if (typeof epic !== &#x27;function&#x27;) {
+    throw new TypeError(&#x27;You must provide a root Epic to createEpicMiddleware&#x27;);
+  }
+
+  // even though we used default param, we need to merge the defaults
+  // inside the options object as well in case they declare only some
+  options = _extends({}, defaultOptions, options);
+  var input$ = new _Subject.Subject();
+  var action$ = options.adapter.input(new _ActionsObservable.ActionsObservable(input$));
+  var epic$ = new _Subject.Subject();
+  var store = void 0;
+
+  var epicMiddleware = function epicMiddleware(_store) {
+    store = _store;
+
+    return function (next) {
+      var _context;
+
+      (_context = _map.map.call(epic$, function (epic) {
+        var output$ = &#x27;dependencies&#x27; in options ? epic(action$, store, options.dependencies) : epic(action$, store);
+
+        if (!output$) {
+          throw new TypeError(&#x27;Your root Epic &#x22;&#x27; + (epic.name || &#x27;&#x3c;anonymous&#x3e;&#x27;) + &#x27;&#x22; does not return a stream. Double check you\&#x27;
+re not missing a return statement!&#x27;);
+        }
+
+        return output$;
+      }), _switchMap.switchMap).call(_context, function (output$) {
+        return options.adapter.output(output$);
+      }).subscribe(store.dispatch);
+
+      // Setup initial root epic
+      epic$.next(epic);
+
+      return function (action) {
+        var result = next(action);
+        input$.next(action);
+        return result;
+      };
+    };
+  };
+
+  epicMiddleware.replaceEpic = function (epic) {
+    // gives the previous root Epic a last chance
+    // to do some clean up
+    store.dispatch({ type: _EPIC_END.EPIC_END });
+    // switches to the new root Epic, synchronously terminating
+    // the previous one
+    epic$.next(epic);
+  };
+
+  return epicMiddleware;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
